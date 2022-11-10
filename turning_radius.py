@@ -1,8 +1,10 @@
 import math
 
-wheelbase = 2.13
-dist = 4.3
-steeringangle = 23
+
+wheelbase = float(input('Wheelbase:'))
+dist = float(input('Distance:'))
+steeringangle = float(input('Steeringangle:'))
+
 
 def degToRad(deg):
     return deg/180*math.pi
