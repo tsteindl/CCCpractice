@@ -11,7 +11,10 @@ def degToRad(deg):
 
 
 def calcTurnRadius(wheelbase, steeringangle):
-    return wheelbase / math.sin(degToRad(steeringangle))
+    if steeringangle!=0:
+        return wheelbase / math.sin(degToRad(steeringangle))
+    else:
+        return -1
 
 
 def circumference(radius):
