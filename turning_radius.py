@@ -11,7 +11,7 @@ def degToRad(deg):
 
 
 def calcTurnRadius(wheelbase, steeringangle):
-    return round(wheelbase / math.sin(degToRad(steeringangle)), 3)
+    return wheelbase / math.sin(degToRad(steeringangle))
 
 
 def circumference(radius):
@@ -22,16 +22,21 @@ def distToAngle(wheelbase, radius):
     return math.asin(wheelbase/radius)
 
 
-alpha = (distToAngle(wheelbase, calcTurnRadius(wheelbase, steeringangle)))
+if steeringangle==0:
+    print(0)
+    print(dist)
+    print(0)
+else:
+    alpha = (distToAngle(wheelbase, calcTurnRadius(wheelbase, steeringangle)))
 
-r = calcTurnRadius(wheelbase, steeringangle)
-y = r * math.sin(dist/r)
-s = r * math.cos(dist/r)
-x = r - s
+    r = calcTurnRadius(wheelbase, steeringangle)
+    y = r * math.sin(dist/r)
+    s = r * math.cos(dist/r)
+    x = r - s
 
 
-print(x)
-print(y)
-print(dist/circumference(calcTurnRadius(wheelbase, steeringangle)) * 360)
+    print(x)
+    print(y)
+    print(dist/circumference(calcTurnRadius(wheelbase, steeringangle)) * 360)
 
 
