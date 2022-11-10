@@ -9,6 +9,13 @@ def printTokens(*argv):
         print(arg, end="")
 
 
+def printTokensRounded(*argv):
+    for arg in argv:
+        s = roundAndFormatTo2Digits(arg)
+        print(s, end="")
+
+
+
 def roundAndFormatTo2Digits(f):
     return "{:.2f}".format(round(f, 2))
 
